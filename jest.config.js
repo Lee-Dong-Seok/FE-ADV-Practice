@@ -8,7 +8,13 @@ const createJestConfig = nextJest({
   // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
   dir: './',
 })
-
+module.exports = {
+  preset: "ts-jest",
+  testEnvironment: "jsdom",
+  transform: {
+    "^.+.(ts|tsx|js|jsx)$": "babel-jest",
+  },
+};
 /** @type {import('jest').Config} */
 const config = {
   // All imported modules in your tests should be mocked automatically
